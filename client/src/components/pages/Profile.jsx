@@ -125,7 +125,7 @@ const Profile = () => {
 
             <button
               onClick={() => navigate("/developers")}
-              className="hidden sm:block text-sm font-medium text-slate-400 hover:text-indigo-400 transition"
+              className="text-sm font-medium text-slate-400 hover:text-indigo-400 transition"
             >
               Developers
             </button>
