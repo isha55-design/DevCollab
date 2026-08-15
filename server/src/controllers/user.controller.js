@@ -7,7 +7,7 @@ async function getProfile(req, res) {
 
   const user = await userModel
     .findById(userId)
-    .select("-password");
+    .select("-password -email");
 
   if (!user) {
     return res.status(404).json({
@@ -89,7 +89,7 @@ async function updateProfile(req, res) {
       linkedin
     },
     { new: true }
-  ).select("-password");
+  ).select("-password -email");
 
   if (!user) {
     return res.status(404).json({
@@ -147,7 +147,7 @@ async function deleteAccount(req, res) {
 async function getDevelopers(req, res) {
   const developers = await userModel
     .find({ _id: { $ne: req.user.id } })
-    .select("-password");
+    .select("-password -email");
 
   return res.status(200).json({
     developers
