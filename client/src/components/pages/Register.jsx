@@ -9,9 +9,14 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setError("");
+    setLoading(true);
 
     try {
       const response = await api.post("/api/auth/register", {
@@ -20,21 +25,27 @@ const Register = () => {
         password,
       });
 
-      console.log(response.data);
-      
-      localStorage.setItem("token", response.data.token);
+      console.log("REGISTER RESPONSE:", response.data);
 
-      // Register ke baad Profile page
-      navigate("/profile");
+      localStorage.setItem("token", response.data.token);
 
       setUsername("");
       setEmail("");
       setPassword("");
 
+      // Register ke baad Profile page
+      navigate("/profile");
     } catch (error) {
       console.log(
+        "REGISTER ERROR:",
         error.response?.data || error.message
       );
+
+      setError(
+        error.response?.data?.message || "Something went wrong"
+      );
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -121,12 +132,20 @@ const Register = () => {
               </div>
             </div>
 
+            {/* Error */}
+            {error && (
+              <p className="text-red-500 text-sm font-medium text-center">
+                {error}
+              </p>
+            )}
+
             {/* Button */}
             <button
               type="submit"
-              className="w-full py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition"
+              disabled={loading}
+              className="w-full py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Create Account
+              {loading ? "Creating Account..." : "Create Account"}
             </button>
 
           </form>

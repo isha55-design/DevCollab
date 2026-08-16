@@ -8,38 +8,41 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  setError("");
+    setError("");
+    setLoading(true);
 
-  try {
-    const response = await api.post("/api/auth/login", {
-      email,
-      password,
-    });
+    try {
+      const response = await api.post("/api/auth/login", {
+        email,
+        password,
+      });
 
-    console.log("LOGIN RESPONSE:", response.data);
+      console.log("LOGIN RESPONSE:", response.data);
 
-    localStorage.setItem("token", response.data.token);
+      localStorage.setItem("token", response.data.token);
 
-    navigate("/profile");
+      setEmail("");
+      setPassword("");
 
-    setEmail("");
-    setPassword("");
+      navigate("/profile");
+    } catch (error) {
+      console.log(
+        "LOGIN ERROR:",
+        error.response?.data || error.message
+      );
 
-  } catch (error) {
-    console.log(
-      "LOGIN ERROR:",
-      error.response?.data || error.message
-    );
-
-    setError(
-      error.response?.data?.message || "Something went wrong"
-    );
-  }
-};
+      setError(
+        error.response?.data?.message || "Something went wrong"
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-slate-950 flex items-center justify-center px-4">
@@ -91,17 +94,20 @@ const handleSubmit = async (e) => {
               />
             </div>
 
-            {/* Login Button */}
+            {/* Error */}
             {error && (
-           <p className="text-red-500 text-sm font-medium text-center">
-            {error}
-           </p>
+              <p className="text-red-500 text-sm font-medium text-center">
+                {error}
+              </p>
             )}
+
+            {/* Login Button */}
             <button
               type="submit"
-              className="w-full py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition"
+              disabled={loading}
+              className="w-full py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Login
+              {loading ? "Logging in..." : "Login"}
             </button>
 
           </form>
