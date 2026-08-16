@@ -23,7 +23,7 @@ const Developers = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0b0f1a] text-slate-100">
+    <div className="min-h-screen bg-purple-950 text-slate-100">
 
       <main className="max-w-6xl mx-auto px-5 py-10">
 
@@ -31,7 +31,7 @@ const Developers = () => {
           Developers
         </h1>
 
-        <p className="text-slate-400 mt-1">
+        <p className="text-white mt-1">
           Discover developers and their profiles.
         </p>
 
@@ -41,7 +41,7 @@ const Developers = () => {
             <div
             key={developer._id}
             onClick={() => navigate(`/user/${developer._id}`)}
-            className="bg-[#111827] border border-white/[0.07] rounded-2xl p-6 cursor-pointer hover:border-indigo-500/40 hover:-translate-y-1 transition duration-300"
+            className="bg-purple-900 border border-white/[0.07] rounded-2xl p-6 cursor-pointer hover:border-indigo-500/40 hover:-translate-y-1 transition duration-300"
             >
 
               <div className="flex items-center gap-4">

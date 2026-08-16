@@ -107,16 +107,16 @@ const Profile = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#0b0f1a]/100 text-slate-100">
+    <div className="min-h-screen bg-purple-950 text-slate-100">
 
       {/* Navbar */}
-      <header className="sticky top-0 z-50 bg-[#0b0f1a]/100 backdrop-blur-xl border-b border-white/[0.06]">
+      <header className="sticky top-0 z-50 bg-purple-400 backdrop-blur-xl border-b border-white/[0.06]">
 
         <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
 
-          <h1 className="text-2xl font-black tracking-tight">
+          <h1 className="text-purple-950 text-2xl font-black tracking-tight">
             Dev
-            <span className="text-indigo-400">
+            <span className="text-indigo-500">
               Collab
             </span>
           </h1>
@@ -125,7 +125,7 @@ const Profile = () => {
 
             <button
               onClick={() => navigate("/developers")}
-              className="text-sm font-medium text-slate-400 hover:text-indigo-400 transition"
+              className="text-sm font-medium text-purple-950 hover:text-indigo-400 transition"
             >
               Developers
             </button>
@@ -181,13 +181,13 @@ const Profile = () => {
         {/* DELETE ACCOUNT */}
         <section className="mt-12 pt-8 border-t border-red-500/10">
 
-          <div className="bg-red-500/[0.04] border border-red-500/10 rounded-2xl p-6">
+          <div className="bg-purple-950 border border-red-500/10 rounded-2xl p-6">
 
             <h2 className="text-lg font-bold text-red-400">
               Danger Zone
             </h2>
 
-            <p className="text-sm text-slate-500 mt-2 max-w-xl">
+            <p className="text-sm text-white mt-2 max-w-xl">
               Deleting your account will permanently remove your
               profile, posts, comments, and other account data.
               This action cannot be undone.
