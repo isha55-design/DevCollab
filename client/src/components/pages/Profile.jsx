@@ -110,7 +110,7 @@ const Profile = () => {
     <div className="min-h-screen bg-purple-950 text-slate-100">
 
       {/* Navbar */}
-      <header className="sticky top-0 z-50 bg-purple-400 backdrop-blur-xl border-b border-white/[0.06]">
+      <header className="sticky top-0 z-50 bg-purple-500 backdrop-blur-xl border-b border-white/[0.06]">
 
         <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
 
