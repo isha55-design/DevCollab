@@ -2,7 +2,7 @@ import React from "react";
 
 const ProfileHeader = ({ user, onEdit }) => {
   return (
-    <section className="bg-[#2D495A] rounded-[28px] overflow-hidden border border-white/[0.07] shadow-2xl shadow-black/30">
+    <section className="bg-[#001F35] rounded-[28px] overflow-hidden border border-white/[0.07] shadow-2xl shadow-black/30">
 
       {/* Cover */}
       <div className="relative h-56 overflow-hidden bg-[#021D30]">
