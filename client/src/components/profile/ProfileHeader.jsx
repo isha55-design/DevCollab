@@ -2,10 +2,10 @@ import React from "react";
 
 const ProfileHeader = ({ user, onEdit }) => {
   return (
-    <section className="bg-[#111827] rounded-[28px] overflow-hidden border border-white/[0.07] shadow-2xl shadow-black/30">
+    <section className="bg-[#2D495A] rounded-[28px] overflow-hidden border border-white/[0.07] shadow-2xl shadow-black/30">
 
       {/* Cover */}
-      <div className="relative h-56 overflow-hidden bg-purple-500">
+      <div className="relative h-56 overflow-hidden bg-[#021D30]">
 
         {/* Glow */}
         <div className="absolute -top-32 -left-20 w-96 h-96 rounded-full bg-indigo-400/20 blur-3xl" />
@@ -81,7 +81,7 @@ const ProfileHeader = ({ user, onEdit }) => {
               {user.email}
             </p>
 
-            <p className="text-slate-500 mt-3 max-w-xl leading-relaxed">
+            <p className="text-white mt-3 max-w-xl leading-relaxed">
             {user.bio || "No bio added yet."}
             </p>
 

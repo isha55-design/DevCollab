@@ -98,7 +98,7 @@ const Profile = () => {
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-[#080b14] flex items-center justify-center">
+      <div className="min-h-screen bg-[#001937] flex items-center justify-center">
         <p className="text-indigo-400 font-semibold">
           Loading profile...
         </p>
@@ -107,10 +107,10 @@ const Profile = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#001937] text-slate-100">
+    <div className="min-h-screen bg-[#021D30] text-slate-100">
 
       {/* Navbar */}
-      <header className="sticky top-0 z-50 bg-[#001937] backdrop-blur-xl border-b border-white/[0.06]">
+      <header className="sticky top-0 z-50 bg-[#021D30] backdrop-blur-xl border-b border-white/[0.06]">
 
         <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
 
@@ -181,7 +181,7 @@ const Profile = () => {
         {/* DELETE ACCOUNT */}
         <section className="mt-12 pt-8 border-t border-red-500/10">
 
-          <div className="bg-[#001937] border border-red-500/10 rounded-2xl p-6">
+          <div className="bg-[#021D30] border border-red-500/10 rounded-2xl p-6">
 
             <h2 className="text-lg font-bold text-red-400">
               Danger Zone
