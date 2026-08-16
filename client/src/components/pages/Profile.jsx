@@ -107,7 +107,7 @@ const Profile = () => {
   }
 
   return (
-    <div className="min-h-screen bg-purple-950 text-slate-100">
+    <div className="min-h-screen bg-[#3F006B] text-slate-100">
 
       {/* Navbar */}
       <header className="sticky top-0 z-50 bg-purple-500 backdrop-blur-xl border-b border-white/[0.06]">
